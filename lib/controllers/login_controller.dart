@@ -1,5 +1,6 @@
 // login_controller.dart
 import 'package:flutter/material.dart';
+import 'package:form_validate/profile.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
@@ -33,7 +34,22 @@ class LoginController extends GetxController {
     if (formKey.currentState!.validate()) {
       final email = emailController.text.trim();
       final password = passwordController.text;
-
+      showDialog(
+        context: Get.context!,
+        barrierDismissible: false,
+        builder: (context) => AlertDialog(
+          title: Text('ลงทะเบียนสำเร็จ'),
+          content: Text('คุณสามารถเข้าสู่ระบบได้แล้ว'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Get.off(() => const ProfilePage());
+              },
+              child: Text('ตกลง'),
+            ),
+          ],
+        ),
+      );
       // TODO: ทำการ login หรือเชื่อม backend ที่นี่
       Get.snackbar('สำเร็จ', 'ล็อกอินด้วย $email');
     }

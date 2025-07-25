@@ -59,7 +59,22 @@ class RegisterController extends GetxController {
       final password = passwordController.text;
 
       // TODO: เชื่อม backend หรือ Auth API
-      Get.off(const LoginScreen()); // เปลี่ยนไปหน้า Login หลังลงทะเบียนสำเร็จ
+      showDialog(
+        context: Get.context!,
+        barrierDismissible: false,
+        builder: (context) => AlertDialog(
+          title: Text('ลงทะเบียนสำเร็จ'),
+          content: Text('คุณสามารถเข้าสู่ระบบได้แล้ว'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Get.offAll(() => const LoginScreen());
+              },
+              child: Text('ตกลง'),
+            ),
+          ],
+        ),
+      );
       Get.snackbar(
         'ลงทะเบียนสำเร็จ',
         '$firstName $lastName\n$email',
