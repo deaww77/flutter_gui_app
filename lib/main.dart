@@ -14,13 +14,13 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: const Color.fromARGB(255, 119, 255, 137),
 
         primarySwatch: Colors.blue,
         primaryColor: Colors.blue[700],
 
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.blue,
+          backgroundColor: Color.fromARGB(255, 138, 65, 255),
           foregroundColor: Colors.white,
         ),
 
@@ -32,8 +32,8 @@ class MainApp extends StatelessWidget {
 
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.blue,
-            foregroundColor: Colors.white,
+            backgroundColor: const Color.fromARGB(255, 177, 59, 255),
+            foregroundColor: const Color.fromARGB(255, 29, 255, 150),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
             ),
